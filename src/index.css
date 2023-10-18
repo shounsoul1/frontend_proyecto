@@ -1,0 +1,40 @@
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, #e6d6d6, #d6c7c7); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(95, 18, 4); 
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+Nav{
+    display: flex;
+    background-color: rgb(95, 18, 4);
+    justify-content: space-evenly;
+    padding: 15px;
+}
+Nav a{
+    color: azure;
+    text-decoration: none;
+}
+
+.Nav-home{
+    padding-right: 20px;
+}
+
+.background-admin{
+    background-color: #001F3F;
+}
+.has-text-blue{
+    color: #001F3F;
+}
+
