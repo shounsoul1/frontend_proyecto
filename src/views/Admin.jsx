@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 import {useAuth} from '../context/AuthContext.jsx';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 function Admin() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -12,6 +13,7 @@ function Admin() {
     const handleSubmit = async (evt)=> {
         evt.preventDefault();
         try {
+            Swal.showLoading();
             const response = await axios.post(url, {
                 usuario: username,
                 password: password,
@@ -20,11 +22,11 @@ function Admin() {
         const data = response.data;
         console.log(response.data);
         if (data.success) {
+            Swal.close();
             setIsLoggedIn(true);
-            alert('FUNCIONAAAAAAAAAAAA');
-            navigate('/AdminRoute')
+            navigate('/Admin/Home');
         } else {
-            alert(data.message);
+            console.log(data.message);
         }
         } catch (error) {
             console.log(error);
@@ -33,7 +35,7 @@ function Admin() {
     };
     return (
         <>
-            <section className="hero is-medium background-admin">
+            <section className="hero is-medium background-admin vistaAdmin">
                 <div className="hero-body is-flex is-justify-content-center is-align-items-center">
                     <div className="container">
                         <div className="columns is-centered">

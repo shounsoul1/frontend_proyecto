@@ -1,8 +1,8 @@
 function Contact() {
     return (
         <>
-            <section className="container">
-                <h1 className="title has-text-centered">Soy el contact us</h1>
+            <section className="container vista">
+                <p className="title has-text-centered">Soy el contact us</p>
             </section>
         </>
     );

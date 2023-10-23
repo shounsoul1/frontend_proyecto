@@ -1,4 +1,6 @@
-
+html{
+    overflow-y : auto;
+}
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -17,6 +19,10 @@ body{
 }
 
 Nav{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100vw;
     display: flex;
     background-color: rgb(95, 18, 4);
     justify-content: space-evenly;
@@ -25,6 +31,15 @@ Nav{
 Nav a{
     color: azure;
     text-decoration: none;
+}
+
+.filtro{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100vw;
+    margin-top: 54px;
+    background-color: rgb(70, 18, 9);
 }
 
 .Nav-home{
@@ -37,4 +52,51 @@ Nav a{
 .has-text-blue{
     color: #001F3F;
 }
+.is-delete{
+    position: absolute;
+    top: 0;
+    right:0;
+}
 
+.is-update{
+    position: absolute;
+    top: 0;
+}
+
+.vista{
+    margin-top: 53px;
+}
+.vistaboton{
+    margin-top: 80px;
+}
+
+.vistaProductos h1{
+    padding-top: 80px;
+    color: #f8f8f8;
+}
+.soyunboton {
+    padding-top: 89px;
+    position: absolute;
+    right: 0;
+}
+.vistaAdmin{
+    margin-top: 17px;
+}
+.overflow{
+    overflow: visible !important;
+}
+
+.background-card{
+    background-color: rgb(104, 19, 4);
+}
+.has-background{
+    background-image: url("../src/assets/backgroundgif.gif") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.has-background-personalizado{
+    background-color: black;
+}
