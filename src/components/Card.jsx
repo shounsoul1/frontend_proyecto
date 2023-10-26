@@ -18,6 +18,7 @@ function Card({productos, setProductos}) {
             const producto = productos.find((producto) => producto._id === id);
             setEditar(producto);
             setModal(true);
+            console.log(editar.tipo);
         } catch (error) {
             console.error(`Error al actualizar producto: ${error}`);
         }
@@ -70,11 +71,11 @@ function Card({productos, setProductos}) {
         <>
             <div className="columns is-flex-wrap-wrap ">
                 {productos.map((producto)=>(
-                <div key={producto.id} className="column is-3">
-                    <div className="card background-card">
-                        <div className="card-image">
-                            <figure className="image is-3by2 is-relative">
-                                <img className='image is-unselectable' src={producto.imagen}/>
+                <div key={producto.id} className="column is-3 ">
+                    <div className="card background-card card-hover ">
+                        <div className="card-image ">
+                            <figure className="image is-4by3 is-relative ">
+                                <img className='image is-unselectable image-hover has-background-black' src={producto.imagen}/>
                                 {isLoggedIn &&(
                                     <>
                                     <p className="is-delete m-2 is-clickable" onClick={()=> borrarProducto(producto._id)}><FontAwesomeIcon icon={faX} size="xl" style={{color: '#f40606'}} /></p>
@@ -85,12 +86,14 @@ function Card({productos, setProductos}) {
                                 )}
                             </figure>
                         </div>
-                        <div className="card-content">
+                        <div className="card-content is-relative">
                             <div className="media-content is-family-sans-serif">
-                                <p className="title is-5 is-family-monospace has-text-weight-bold has-text-centered has-text-white ">{producto.nombre}</p>
-                                <p className="title no is-7 is-family-monospace has-text-weight-medium has-text-centered has-text-white is-capitalized has-text-weight-bold">{producto.descripcion}</p>
-                                <div className="is-flex is-justify-content-space-around ">
-                                    <p className=" pl-1 pr-1 my-text has-text-warning-dark">Precio: {producto.precio} COP</p>
+                                <p className="title is-5 has-text-weight-medium has-text-centered has-text-white nombre-producto">{producto.nombre}</p>
+                                <p className="title no is-7 is-family-monospace has-text-centered has-text-weight-medium descripcion">{producto.descripcion}</p>
+                                <div className="is-flex is-justify-content-space-around">
+                                    <p className="pl-1 pr-1 my-text has-text-warning-dark">
+                                        Precio: {producto.precio} COP
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -108,11 +111,21 @@ function Card({productos, setProductos}) {
                             <label className="label">Tipo:</label>
                             <button className={`button is-small is-delete ${boton ? 'is-success' : 'is-danger'}`} onClick={() => setBoton((prevState)=>!prevState)}><FontAwesomeIcon icon={faPencilAlt} /></button>
                         </div>
-                        <input className="input is-small is-capitalized is-size-6 has-text-weight-light is-rounded" type="text" value={editar.tipo} onChange={(evt)=>setEditar({...editar, tipo: evt.target.value})} disabled={!boton} />
+                        <div className="select is-fullwidth is-rounded ">
+                            <select className="has-text-dark ok " onChange={(evt)=>setEditar({...editar, tipo: evt.target.value})} value={editar.tipo} disabled={!boton}>
+                                <option value="" className="ok ">Productos</option>
+                                <option value="Entrada" className="ok">Entrada</option>
+                                <option value="Ensalada" className="ok">Ensalada</option>
+                                <option value="Plato_Principal" className="ok">Plato_Principal</option>
+                                <option value="Postre" className="ok">Postre</option>
+                                <option value="Bebida" className="ok">Bebida</option>
+                            </select>
+                        </div>
+                        {/* <input className="input is-small is-capitalized is-size-6 has-text-weight-light is-rounded" type="text" value={editar.tipo} onChange={(evt)=>setEditar({...editar, tipo: evt.target.value})} disabled={!boton} /> */}
                         <label className="label mt-3 mb-3">Nombre:</label>
                         <input className="input is-small is-capitalized is-size-6 has-text-weight-light is-rounded" type="text" value={editar.nombre} onChange={(evt)=>setEditar({...editar, nombre: evt.target.value})} disabled={!boton} />
                         <label className="label mt-3 mb-3">Descripcion:</label>
-                        <input className="input is-small is-capitalized is-size-6 has-text-weight-light is-rounded" type="text" value={editar.descripcion} onChange={(evt)=>setEditar({...editar, descripcion: evt.target.value})} disabled={!boton} />
+                        <input className="input is-small is-size-6 has-text-weight-light is-rounded" type="text" value={editar.descripcion} onChange={(evt)=>setEditar({...editar, descripcion: evt.target.value})} disabled={!boton} />
                         <label className="label mt-3 mb-3">Imagen url:</label>
                         <input className="input is-small is-size-6 has-text-weight-light is-rounded" type="text" value={editar.imagen} onChange={(evt)=>setEditar({...editar, imagen: evt.target.value})} disabled={!boton} />
                         <label className="label mt-3 mb-3">Precio:</label>

@@ -1,7 +1,6 @@
 // components
 import Navbar from './Navbar';
 import NabvarAdmin from './NabvarAdmin';
-import Footer from './Footer';
 // views
 import Home from '../views/Home.jsx';
 import Productos from '../views/Productos.jsx';
@@ -41,7 +40,6 @@ function App() {
                   </>
             )}
           </Routes>
-            <Footer/>
         </BrowserRouter>
     </>
   );

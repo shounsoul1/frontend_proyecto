@@ -7,7 +7,7 @@ function Navbar() {
     return (
         <>
         <nav id="navbar" className="nav">
-            <Link className="is-unselectable" to="/Admin">Admin</Link>
+            <Link className="is-unselectable" to="/Admin">LoginAdmin</Link>
             <Link className="is-unselectable" to="/Productos">Productos</Link>
             <Link className="is-unselectable" to="/"><FontAwesomeIcon className="" icon={faHouse} style={{color: '#bfcce3'}}/> Home</Link>
             <Link className="is-unselectable" to="/About_us">About us</Link>

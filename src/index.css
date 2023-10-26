@@ -21,7 +21,7 @@ body{
 Nav{
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 4;
     width: 100vw;
     display: flex;
     background-color: rgb(95, 18, 4);
@@ -36,7 +36,7 @@ Nav a{
 .filtro{
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 3;
     width: 100vw;
     margin-top: 54px;
     background-color: rgb(70, 18, 9);
@@ -100,3 +100,62 @@ Nav a{
 .has-background-personalizado{
     background-color: black;
 }
+.homeAdmin{
+    margin-top: 5em;
+}
+
+
+.card-des-container {
+    position: relative;
+}
+.card-des{
+    position: absolute;
+}
+
+/* .card-hover:hover::before {
+    content: "";
+    background-color: #00000052;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+    backdrop-filter:blur(1px)
+    
+} */
+
+.gestion-personal{
+    height: 100vh;
+}
+.nombre-producto{
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: max-height 1.6s ease-in-out;
+}
+.card-hover:hover .nombre-producto{
+    max-height: 500px;
+    white-space: initial;
+    transition: max-height 1.6s ease-in-out;
+
+} 
+
+.descripcion{
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #f8f8f8b2;
+
+    
+}
+.card-hover:hover .descripcion {
+    max-height: 500px;
+    white-space: initial;
+    transition: max-height 1.4s ease-in-out;
+
+}
+

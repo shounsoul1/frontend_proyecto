@@ -81,17 +81,27 @@ function Productos() {
                             <div className="modal-background"></div>
                             <div className="modal-content">
                                 <div className="box">
-                                <p className="title is-size-4 has-text-centered has-text-dark">Crear Producto</p>
+                                <p className="title is-size-4 has-text-centered has-text-dark has-text-weight-semibold">Crear Producto</p>
                                 <label className="label mb-3">Tipo:</label>
-                                <input className="input is-small is-rounded" type="text" onChange={(evt)=>setTipo(evt.target.value)} />
+                                <div className="select is-fullwidth is-rounded is-small ">
+                                    <select className="has-text-dark has-text-weight-bold" onChange={(evt)=>setTipo(evt.target.value)} value={tipo} >
+                                        <option value="" className="has-text-weight-bold">Productos</option>
+                                        <option value="Entrada" className="has-text-weight-bold">Entrada</option>
+                                        <option value="Ensalada" className="has-text-weight-bold">Ensalada</option>
+                                        <option value="Plato_Principal" className="has-text-weight-bold">Plato_Principal</option>
+                                        <option value="Postre" className="has-text-weight-bold">Postre</option>
+                                        <option value="Bebida" className="has-text-weight-bold">Bebida</option>
+                                    </select>
+                                </div>
+                                {/* <input className="input is-small is-rounded" type="text" onChange={} /> */}
                                 <label className="label mt-3 mb-3">Nombre:</label>
-                                <input className="input is-small is-rounded" type="text" onChange={(evt)=>setNombre(evt.target.value)} />
+                                <input className="input is-small is-rounded" type="text" onChange={(evt)=>setNombre(evt.target.value)} value={nombre} />
                                 <label className="label mt-3 mb-3">Descripcion:</label>
-                                <input className="input is-small is-rounded" type="text" onChange={(evt)=>setDescripcion(evt.target.value)} />
+                                <input className="input is-small is-rounded" type="text" onChange={(evt)=>setDescripcion(evt.target.value)} value={descripcion} />
                                 <label className="label mt-3 mb-3">Imagen url:</label>
-                                <input className="input is-small is-rounded" type="text" onChange={(evt)=>setImagen(evt.target.value)} />
+                                <input className="input is-small is-rounded" type="text" onChange={(evt)=>setImagen(evt.target.value)} value={imagen} />
                                 <label className="label mt-3 mb-3">Precio:</label>
-                                <input className="input is-small is-rounded" type="text" onChange={(evt)=>setPrecio(evt.target.value)} />
+                                <input className="input is-small is-rounded" type="text" onChange={(evt)=>setPrecio(evt.target.value)} value={precio} />
                                 <div className="is-flex mt-5">
                                     <button className="button is-success is-fullwidth mr-2" onClick={handleSubmit}>Guardar</button>
                                     <button className="button is-danger is-fullwidth ml-2" onClick={() => setModal(false)}>Cancelar</button></div>

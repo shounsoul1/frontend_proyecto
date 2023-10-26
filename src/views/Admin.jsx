@@ -29,8 +29,8 @@ function Admin() {
             console.log(data.message);
         }
         } catch (error) {
+            Swal.close();
             console.log(error);
-            alert('Error al intentar iniciar sesión');
         }
     };
     return (

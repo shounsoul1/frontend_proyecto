@@ -2,7 +2,12 @@ import React from 'react';
 
 function GestionPersonal() {
     return (
-        <h1 className="title has-text-centered">GestionPersonal</h1>
+        <>
+            <div className='is-flex is-justify-content-center is-align-items-center gestion-personal'>
+                <h1 className="title has-text-centered">Standby</h1>
+            </div>
+        </>
+
     );
 }
 
