@@ -125,8 +125,38 @@ Nav a{
     backdrop-filter:blur(1px)
     
 } */
+.rueda{
+    animation-name: rueda;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-name: rueda; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+    -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
+    display: block;
+    margin: 0 auto;
+    height:200px;
+    width: 200px;
+    color: #4d5257;
+}
+  /* Chrome, Safari, Opera */
+@-webkit-keyframes rueda {
+    100% {
+      -ms-transform: rotate(360deg); /* IE 9 */
+      -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */ 
+        transform: rotate(360deg);
+    }
+}
+@keyframes rueda{
+    100% {
+      -ms-transform: rotate(360deg); /* IE 9 */
+      -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */ 
+        transform: rotate(360deg);
+    }
+}
 
-.gestion-personal{
+.centrado-paginas-espera{
     height: 100vh;
 }
 .nombre-producto{

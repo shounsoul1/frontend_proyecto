@@ -37,10 +37,6 @@ function Admin() {
         <>
             <section className="hero is-medium background-admin vistaAdmin">
                 <div className="hero-body is-flex is-justify-content-center is-align-items-center is-relative">
-                    <div className="login">
-                            <h1 className="title">Usuario: admin</h1>
-                            <h1 className="title">Password: admin</h1>
-                    </div>
                     <div className="container ">
                         <div className="columns is-centered">
                             <div className="column is-4 has-text-centered ">
