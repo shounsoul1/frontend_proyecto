@@ -159,3 +159,14 @@ Nav a{
 
 }
 
+.login{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 3em;
+    margin-right: 2em;
+    background-color: rgba(253, 253, 253, 0.5);
+}
+.login h1{
+    color: #001f3f9d;
+}
