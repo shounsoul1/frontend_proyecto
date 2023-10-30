@@ -9,6 +9,7 @@ import About from '../views/About.jsx';
 import Contact from '../views/Contact.jsx';
 import HomeAdmin from '../views/HomeAdmin.jsx';
 import GestionPersonal from '../views/GestionPersonal.jsx';
+import VistaPersonal from '../views/VistaPersonal';
 // contexto
 import {useAuth} from '../context/AuthContext.jsx';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
@@ -24,15 +25,16 @@ function App() {
           <Routes>
             {isLoggedIn ? (
               <>
-                <Route path="/Admin/Home" element={<HomeAdmin />}/>
-                <Route path="/Admin/Productos" element={<Productos />}/>
-                <Route path="/Admin/Gestion-personal" element={<GestionPersonal />}/>
+                <Route path="/Admin/Home" element={<HomeAdmin />} />
+                <Route path="/Admin/Productos" element={<Productos />} />
+                <Route path= "/Admin/Vista" element={<VistaPersonal/>} />
+                <Route path="/Admin/Gestion-personal" element={<GestionPersonal />} />
                 <Route to="/Logout"></Route>
               </>
             ) : (
                   <>
                     <Route path="/" element={<Home />} />
-                    <Route path='/Productos' element={<Productos/>}/>
+                    <Route path='/Productos' element={<Productos/>} />
                     <Route path="/About_us" element={<About/>} />
                     <Route path="/Contact-us" element={<Contact/>} />
                     <Route path="/Admin" element={<Admin/>} />

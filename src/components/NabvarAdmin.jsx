@@ -31,8 +31,9 @@ function NabvarAdmin() {
         <nav>
             <Link to="/Admin/Home" className="is-unselectable">Home</Link>
             <Link to="/Admin/Productos" className="is-unselectable">Gestión de Productos</Link>
+            <Link to="/Admin/Vista" className="is-unselectable">Vista Gestión Personal</Link>
             <Link to="/Admin/Gestion-personal" className="is-unselectable">Gestión de Personal</Link>
-            <Link to="/" onClick={handleLogout} className="is-unselectable">Cerrar sesion</Link>
+            <Link to="/ad" onClick={handleLogout} className="is-unselectable">Cerrar sesion</Link>
         </nav>
     );
 }
